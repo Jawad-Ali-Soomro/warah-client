@@ -1,5 +1,9 @@
 * {
   font-family: "Alan Sans";
+}
+
+*:not(input) {
+
   text-transform: uppercase;
 }
 

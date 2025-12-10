@@ -135,7 +135,7 @@ const Home = () => {
             <Header />
             
             {/* Hero Section */}
-            <section className="w-full px-10">
+            <section className="w-full px-10" data-aos="fade-in">
                 <motion.div
                     className="relative w-full h-[90vh] overflow-hidden"
                     initial={{ opacity: 0 }}
@@ -153,16 +153,19 @@ const Home = () => {
                     <div className="absolute inset-0  bg-opacity-20"></div>
                     <motion.div
                         className="absolute bottom-20 left-10 text-white"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
                     >
-                        <h2 className="text-6xl md:text-8xl font-light mb-4 uppercase tracking-wider">
+                        <h2 className="text-6xl md:text-8xl font-light mb-4 uppercase tracking-wider" data-aos="fade-right" data-aos-delay="400">
                             {t('home.newCollection')}
                         </h2>
                         <motion.button
                             className="animated-button border border-white text-white px-8 py-3 uppercase text-sm tracking-wider hover:bg-white hover:text-black transition-colors duration-300"
-                           
+                            data-aos="zoom-in"
+                            data-aos-delay="500"
                         >
                             {t('home.shopNow')}
                         </motion.button>
@@ -178,6 +181,8 @@ const Home = () => {
                             key={category.key}
                             href={category.link}
                             className="relative group overflow-hidden"
+                            data-aos="fade-up"
+                            data-aos-delay={index * 100}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -213,7 +218,7 @@ const Home = () => {
             </section>
 
             {/* Shop Categories Section */}
-            <section className="w-full py-16 px-4 md:px-8">
+            <section className="w-full py-16 px-4 md:px-8" data-aos="fade-up">
                 <motion.div
                     className=" mx-auto"
                     initial={{ opacity: 0 }}
@@ -221,7 +226,7 @@ const Home = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-wider mb-8 text-start">
+                    <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-wider mb-8 text-start" data-aos="fade-right">
                         {t('home.shopCategories')}
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-8 gap-4">
@@ -230,6 +235,8 @@ const Home = () => {
                                 key={category.key}
                                 href={category.link}
                                 className="relative group overflow-hidden"
+                                data-aos="zoom-in"
+                                data-aos-delay={index * 50}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -271,7 +278,7 @@ const Home = () => {
 
             {/* Product Sections */}
             {productSections.map((section, sectionIndex) => (
-                <section key={section.title} className="w-full py-16 px-4 md:px-8">
+                <section key={section.title} className="w-full py-16 px-4 md:px-8" data-aos="fade-up">
                     <motion.div
                         className="mx-auto "
                         initial={{ opacity: 0 }}
@@ -279,7 +286,7 @@ const Home = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-wider mb-8 text-start">
+                        <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-wider mb-8 text-start" data-aos="fade-right">
                             {section.title}
                         </h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -288,6 +295,8 @@ const Home = () => {
                                     key={productIndex}
                                     href="#"
                                     className="group"
+                                    data-aos="fade-up"
+                                    data-aos-delay={productIndex * 100}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -331,26 +340,7 @@ const Home = () => {
             ))}
 
             {/* Sale Banner */}
-            <section className="w-full py-20  text-white">
-                <motion.div
-                    className="text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h2 className="text-5xl md:text-7xl font-light uppercase tracking-wider mb-6">
-                        {t('home.sale')}
-                    </h2>
-                    <motion.button
-                        className="border border-white text-white px-8 py-3 uppercase text-sm tracking-wider hover:bg-white hover:text-black transition-colors duration-300"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        {t('home.viewAll')}
-                    </motion.button>
-                </motion.div>
-            </section>
+      
 
             <Footer />
         </div>
